@@ -53,12 +53,12 @@ except ImportError:
     TypesUnionType = ()
 
 
-if sys.version_info < (3, 9):
+if sys.version_info < (3, 12, 4):
 
     def evaluate_forwardref(type_: ForwardRef, globalns: Any, localns: Any) -> Any:
         return type_._evaluate(globalns, localns)
 
-elif sys.version_info < (3, 12):
+elif sys.version_info < (3, 12, 8):
 
     def evaluate_forwardref(type_: ForwardRef, globalns: Any, localns: Any) -> Any:
         # Even though it is the right signature for python 3.9, mypy complains with
