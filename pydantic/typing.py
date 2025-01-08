@@ -53,7 +53,7 @@ except ImportError:
     TypesUnionType = ()
 
 
-if sys.version_info < (3, 12, 4):
+if sys.version_info < (3, 9):
 
     def evaluate_forwardref(type_: ForwardRef, globalns: Any, localns: Any) -> Any:
         return type_._evaluate(globalns, localns)
